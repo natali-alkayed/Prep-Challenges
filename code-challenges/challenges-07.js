@@ -140,8 +140,49 @@ const cvFormatter = (arr) => {
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
 const applicationsStatics = (arr) => {
-    // write your code here
+    let result ={};
+    let python_devs=0;
+    let  javaScript_devs=0;
+    let dotNet_devs=0;
+    let java_devs=0;
+    let totalApplicants=0;
+    let rejectedApplicants=0;
+
+    for (let i = 0; i < arr.length; i++)
+    {
+        if(arr[i].yearsOfExperience <=1 && (arr[i].firstName==null || arr[i].firstName ==" ") && (arr[i].lasttName==null || arr[i].lastName ==" "))
+        {
+            rejectedApplicants+=1;   
+        }
+        if(arr[i].tech=="Python")
+        {
+            python_devs+=1;
+        }
+        if(arr[i].tech=="JS" )
+        {
+            javaScript_devs+=1;
+        }
+        if(arr[i].tech=="Java" )
+        {
+            java_devs+=1;
+        }
+        if(arr[i].tech==".Net" )
+        {
+            dotNet_devs+=1;
+        }
+        totalApplicants=Object.keys(arr).length-rejectedApplicants;
+        result={"rejectedApplicants" : rejectedApplicants,
+        "dotNet_devs": dotNet_devs,
+        "javaScript_devs":javaScript_devs,
+        "python_devs":python_devs,
+        "java_devs":java_devs,
+        "totalApplicants":totalApplicants}
+    }
+    return result
+
 };
+
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -267,7 +308,7 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
-    // write your code here
+    
 };
 // -------------------------------------------------------------------------------------------------------
 
