@@ -104,7 +104,24 @@ const isPalindrome = (str) => {
 //
 
 const samePattern = (str, arr) => {
-    // write your code here
+  if (str.length !== arr.length) {
+    return false;
+  }
+
+  const map = {};
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    const word = arr[i];
+
+    if (!map[char]) {
+      map[char] = word;
+    } else if (map[char] !== word) 
+      return false;
+    
+  }
+
+  const values = Object.values(map);
+  return new Set(values).size === values.length;
 }
 // -------------------------------------------------------------------------------------------------------
 
