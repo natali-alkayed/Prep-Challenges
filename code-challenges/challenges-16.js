@@ -13,9 +13,9 @@
 // Output => "olleH";
 
 const reverseString = (string) => {
-      const arrayStrings = string.split("");
-      const reverseArray = arrayStrings.reverse();
-      const finalArray = reverseArray.join("");
+    const arrayStrings = string.split("");
+    const reverseArray = arrayStrings.reverse();
+    const finalArray = reverseArray.join("");
     return finalArray;
 }
 // -------------------------------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ const reverseString = (string) => {
 // Input <= ["hello ^_^ ","Hi ^_^" ,"What's up ^_-" ,"lol"] , Output => ["hello ^_^ ","Hi ^_^" ] ;
 
 const detectFace = (arr) => {
-    const result = arr.filter(word => word.includes ("^_^"));
+    const result = arr.filter(word => word.includes("^_^"));
     return result;
 }
 // -------------------------------------------------------------------------------------------------------
@@ -48,7 +48,12 @@ const detectFace = (arr) => {
 // Input <= "coding" output =>"cdn"
 
 const eveCharacter = (str) => {
-    //write your code here ...
+    let x = [];
+    let arr = str.split("");
+    for (let i = 0; i < arr.length; i += 2) {
+        x.push(arr[i]);
+    }
+    return x.join("");
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -68,8 +73,12 @@ const eveCharacter = (str) => {
 // [["grilled chicken"], ["baked chicken"], ["fried chicken"]];
 
 
+let result = [];
 const chickenGradients = (arr) => {
-    //write your code here ...
+    for (let i = 0; i < arr.length; i++) {
+        result.push(arr[i].filter(word => word.includes("chicken")));
+    }
+    return result;
 }
 // -------------------------------------------------------------------------------------------------------
 
